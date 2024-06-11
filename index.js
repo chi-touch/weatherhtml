@@ -1,134 +1,98 @@
-// https://www.weatherapi.com/my/
-const API_KEY = "&appid=6b76294b8189abedc3827f2b8cace4bc";
-const GEO_URL = "https://api.openweathermap.org/geo/1.0/direct?q=";
-const FIRST_PART = "https://api.open-meteo.com/v1/forecast?";
-const LAST_PART = "&current_weather=true&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m";
-
-
-// const images = ['sun ', 'cloud', 'rain']
-// const image = ''
-// const response = 'sunny'
-// if(response = 'sunny'){
-//     image = images[0]
-// }
-
-
-const weatherForm = document.getElementById("input-form");
-const submitButton = document.getElementById("submit-btn");
-const freeTag = document.getElementById("free");
-const domImage = document.getElementById("imageId");
-const myTemp = document.getElementById("temp")
-const myTemp1 = document.getElementById("temp1")
-const myHumity = document.getElementById("humity")
-// domImage.src = image
-
-// weatherForm.addEventListener("submit",activateSearch);
-
-const activateSearch = (event) => {
-    console.log("log ...");
-
-    const cityName = document.getElementsByName("city")[0].value;
-    // const URL = `${GEO_URL}${cityName}&limit=1${API_KEY}`;
-    console.log(URL);
-    getGeoLocation(cityName);
-    
-}
-
-// function displayWeather(data) {
-//     console.log(data.current_weather);
-//     const currentWeather = data.current_weather;
-//     document.getElementById("submit-btn").value = `
-//     Temperature: ${currentWeather.temperature}°C
-//     Time: ${currentWeather.time}
-//     Wind speed: ${currentWeather.windspeed} m/s`;
-//     console.log(currentWeather);
-// }
-
-const getWeather = (url) => {
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            displayWeather(data);
-        })
-        .catch(error => console.log(error));
-};
-
-const getGeoLocation = (location) => {
-    let url = `http://api.weatherapi.com/v1/current.json?key=cf3c31da15d743c880300608241705&q=${location}&aqi=no`
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            let current = data.current
-            freeTag.innerHTML = data.current.condition.text
-            myTemp.innerHTML = current.temp_c
-            myTemp1.innerHTML = current.temp_f
-            myHumity.innerHTML = current.humidity
-
-        })
-        .catch(error => console.log(error));
-};
 
 
 
-            
-            // console.log(data[0]);
-            // const { lat, lon } = data[0];
-            // console.log(lat, lon);
-            // const weatherURL = `${FIRST_PART}latitude=${lat}&longitude=${lon}${LAST_PART}`;
-            // getWeather(weatherURL);
 
-// const API_KEY = "&appid=6b76294b8189abedc3827f2b8cace4bc";
-// const GEO_URL = "https://api.openweathermap.org/geo/1.0/direct?q=";
-// const FIRST_PART = "https://api.open-meteo.com/v1/forecast?";
-// const LAST_PART = "&current_weather=true&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m";
 
-// const weather = document.getElementById("input-form");
-// const submitButton = document.getElementById("input-form");
-// weather.addEventListener("submit", (event) => {
-//     event.preventDefault();
 
-//     const cityName = document.getElementsByName("city")[0].value;
-//     const URL = `${GEO_URL}${cityName}&limit=1${API_KEY}`;
-//     console.log(URL);
-//     getGeoLocation(URL);
-// });
 
-// submitButton.addEventListener("click",() =>{
-//     weather.dispatchEvent(new Event("submit"));
-// });
 
-// function displayWeather(data) {
-//     console.log(data.current_weather);
-//     const currentWeather = data.current_weather;
-//     document.getElementById("submit").innerHTML = `
-//     Temperature: ${currentWeather.temperature}°C
-//     Time: ${currentWeather.time}
-//     Wind speed: ${currentWeather.windspeed} m/s`;
-//     console.log(currentWeather);
-// }
 
-// const getWeather = (url) => {
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data);
-//             displayWeather(data);
-//         })
-//         .catch(error => console.log(error));
-// };
 
-// const getGeoLocation = (url) => {
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data[0]);
-//             const { lat, lon } = data[0];
-//             console.log(lat, lon);
-//             const weatherURL = `${FIRST_PART}latitude=${lat}&longitude=${lon}${LAST_PART}`;
-//             getWeather(weatherURL);
-//         })
-//         .catch(error => console.log(error));
-// };
 
+
+
+
+
+
+
+
+
+
+// const container = document.querySelector("#container")
+// const search = document.querySelector(".search-box button")
+// const weatherBox = document.querySelector(".weather-box")
+// const weatherDetails = document.querySelector(".weather-details")
+// const error404 = document.querySelector(".not-found")
+//
+// search.addEventListener('click', () =>{
+//
+//     const APIKey ='728b0ee6df5687559812bd3169ad77b7';
+//     const city = document.querySelector('.search-box input').value;
+//
+//     if(city ==='')
+//         return
+//
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`).then(response =>response.json()).then(json =>{
+//         if(json.cod === '404'){
+//             container.style.height = '400px';
+//             weatherBox.style.display = 'none';
+//             weatherDetails.style.display = 'none';
+//             error404.style.display = 'block'
+//             // error404.classList.add('fadeIn');
+//             return
+//         }
+//
+//         error404.style.display = 'none';
+//         // error404.classList.remove('fadeIn')
+//
+//         const image = document.querySelector('.weather-box img')
+//         const temperature = document.querySelector('.weather-box .temperature')
+//         const description = document.querySelector('.weather-box .description')
+//         const humidity = document.querySelector('.weather-details .humidity span');
+//         const wind = document.querySelector('.weather-details .wind span')
+//
+//
+//         switch(json.weather[0].main){
+//             case'Clear':
+//                 image.src ='images/clear.png';
+//                 break;
+//
+//                 case'Rain':
+//                 image.src ='images/rain.png';
+//                 break;
+//
+//                 case'Wind':
+//                 image.src ='images/wind.png';
+//                 break;
+//
+//                 case'Sunny':
+//                 image.src ='images/sunny.png';
+//                 break;
+//
+//                 case'Snow':
+//                 image.src ='images/snow.png';
+//                 break;
+//
+//                 case'Clouds':
+//                 image.src ='images/cloud.png';
+//                 break;
+//
+//                 default:
+//                     image.src = '';
+//         }
+//
+//
+//         temperature.innerHTML =    `${parseInt(json.main.temp)}<span>°C</span>`
+//         description.innerHTML =`${json.weather[0].description}`;
+//         humidity.innerHTML =   `${json.main.humidity}%`;
+//         wind.innerHTML =    `${parseInt(json.wind.speed)}km/h`;
+//
+//         weatherBox.style.display ='block';
+//         weatherDetails.style.display ='block'
+//         weatherBox.classList.add('fadeIn');
+//         container.style.height = '590px'
+//     })
+// })
+//
+//
+//
