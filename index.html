@@ -2,73 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <title>Weather Forecast</title>
 </head>
 <body>
-    <div class="mainContainer">
-       
-        <header>
-            <div class="weatherContainer">
-                <div id="page-check">
-                    <h1 class="title">Weather ForeCast</h1>                
-                    <form id="input-form">
-                        <input type="text" name="city" placeholder="enter-city-name">
-                    </form>
-                    <button type="submit" onclick="activateSearch()" value="Submit" class="submit">Submit</button>
-                </div> 
-            </div>
-
-            <div class="container">
-                <div id="weath">
-                    <p id="free">Free weather</p>
-                    <p id="temp">Temperature</p>
-                    <p id="temp1">Temperature1</p>
-                    <p id="humity">Humidity</p>
-                </div>
-                <div class="imageDiv">
-                    <img id="imageId" src="images/AdobeStock_67625957_Preview.jpeg" alt="" width="100%">
-                </div>
-                
-            </div>
-           
-        </header>
-       
+<div class="wrapper">
+    <div id="page-check">
+        <h1>Weather Forecast</h1>
+        <p>Forecast Your City Weather</p>
+        <form id="input-form">
+            <input type="text" name="city" placeholder="Enter City Name">
+            <input type="submit" value="Submit">
+        </form>
+        <div id="result"></div>
     </div>
-    <script src="index.js"></script>
+</div>
+
+<script src="Dom.js"></script>
 </body>
 </html>
 
 
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="mainContainer">
-        <header>
-            <div id="page-check">
-                <h1 class="title"> Weather Cast</h1>
-                
-                <form id="input-form">
-                    <input type="text" name="city" placeholder="enter-city-name">
-                     <img src="images/AdobeStock_67625957_Preview.jpeg" alt=""> -->
-<!--                    
-                </form>
-                
-            </div>
-            <div id="submit">
-                <button id="submit-btn">Submit</button>
-            </div>
 
-        </header>
-    </div>
-    <script src="index.js"></script>
-</body>
-</html>  -->
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Weather</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">-->
+<!--    <link rel="stylesheet" href="style.css">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--    <div id="container">-->
+<!--        <div class="search-box">-->
+<!--            <i class="fa-solid fa-location-dot"></i>-->
+<!--            <input type="text" placeholder="Enter Your Location">-->
+<!--            <button onclick="activateSearch()" class="fa-solid fa-magnifying-glass" type="search"></button>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; <div class="se">-->
+<!--            -->
+<!--            <button type="submit" onclick="activateSearch()" value="Submit" class="submit">Submit</button>-->
+<!--        </div> &ndash;&gt;-->
+
+<!--        <div class="not-found" style="display: none;">-->
+<!--            <img src="images/402.png">-->
+<!--            <p>Oops! Invalid location :/</p>-->
+<!--        </div>-->
+<!--        <div class="weather-box" style="display: none;">-->
+<!--            <img src="">-->
+<!--            <p class="temperature"></p>-->
+<!--            <p class="description"></p>-->
+<!--        </div>-->
+<!--        <div class="weather-details" style="display: none;">-->
+<!--            <div class="humidity">-->
+<!--                <i class="fa-solid fa-water"></i>-->
+<!--                <div class="text">-->
+<!--                    <span></span>-->
+<!--                    <p>Humidity</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="wind">-->
+<!--                <i class="fa-solid fa-wind"></i>-->
+<!--                <div class="text">-->
+<!--                    <span></span>-->
+<!--                    <p>Wind Speed</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--   -->
+<!--    <script src="https://kit.fomtawesome.com/7c8801c017.js" crossorigin="anomymous"></script>-->
+<!--    <script src="index.js"></script>-->
+<!--</body>-->
+<!--</html>-->
